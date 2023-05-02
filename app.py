@@ -37,7 +37,7 @@ def detect_emotion():
     result = DeepFace.analyze(img_path, actions=['emotion'])
     
     # delete temporary image file
-    # os.remove(img_path)
+    os.remove(img_path)
     
     return result[0]['dominant_emotion'], 200
 
