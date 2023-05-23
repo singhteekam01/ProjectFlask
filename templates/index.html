@@ -10,7 +10,7 @@
 		<br><br>
 		<input type="submit" value="Detect Emotion">
 	</form>
-
+	<button onclick="capture()">Capture Image</button>
 	<div id="result"></div>
 
 	<script>
@@ -39,6 +39,9 @@
 				console.error(error);
 			}
 		});
+		function capture(){
+		window.open("http://localhost:5000/cam_emotion")
+		}
 	</script>
 </body>
 </html>
