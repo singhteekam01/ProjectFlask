@@ -28,7 +28,7 @@ def detect_emotion():
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-    if len(faces) == 0:
+    if len(faces) == 0: 
         return 'No face detected in the image', 400
     
     img_path = './temp_img.jpg'
@@ -38,10 +38,10 @@ def detect_emotion():
     
     # delete temporary image file
     os.remove(img_path)
-    
-    return result[0]['dominant_emotion'], 200
+     
+    return render_template("result.html",value=result[0]['dominant_emotion'])
 
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(port=5000, debug=True) 
 # run the application in debug mode

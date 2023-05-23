@@ -28,7 +28,10 @@
 
 				if (response.ok) {
 					const result = await response.text();
+					
 					document.getElementById('result').innerText = result;
+					// console.log(result)
+					// localStorage.setItem("emotionvalue",document.getElementById('result').innerText)
 				} else {
 					throw new Error(`Server returned ${response.status}: ${response.statusText}`);
 				}
